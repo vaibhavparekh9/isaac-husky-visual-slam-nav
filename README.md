@@ -190,6 +190,8 @@ In the RViz window;
 1. If the robot's pose looks off, use **2D Pose Estimate** to seed it.
 2. Use **2D Goal Pose** to send a goal — the Husky plans and drives to it.
 
+https://github.com/user-attachments/assets/3670df5e-895c-4f11-9951-710e962d86b7
+
 ---
 
 ## Appendix: regenerating the Husky USD
