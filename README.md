@@ -172,7 +172,7 @@ cp ~/.ros/rtabmap.db \
    ~/isaac-husky-visual-slam-nav/husky_ws/src/husky_custom/maps/rtabmap.db
 ```
 
-<video src="https://github.com/vaibhavparekh9/isaac-husky-visual-slam-nav/raw/main/media/husky_map.mp4" controls="controls" style="max-width: 600px;"></video>
+https://github.com/user-attachments/assets/089acb42-f9d9-4ccb-963a-708aa3763c8d
 
 ---
 
@@ -189,8 +189,6 @@ Localize against the saved map and navigate autonomously.
 In the RViz window;
 1. If the robot's pose looks off, use **2D Pose Estimate** to seed it.
 2. Use **2D Goal Pose** to send a goal — the Husky plans and drives to it.
-
-<video src="https://github.com/vaibhavparekh9/isaac-husky-visual-slam-nav/raw/main/media/husky_nav2.mp4" controls="controls" style="max-width: 600px;"></video>
 
 ---
 
