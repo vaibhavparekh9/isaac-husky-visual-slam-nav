@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<package format="3">
+  <name>husky_custom</name>
+  <version>0.0.1</version>
+  <description>RGB-D visual SLAM and autonomous navigation for a Clearpath Husky in NVIDIA Isaac Sim.</description>
+  <maintainer email="vsparekh@andrew.cmu.edu">Vaibhav Parekh</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>rtabmap_slam</exec_depend>
+  <exec_depend>rtabmap_sync</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>teleop_twist_keyboard</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <!-- Nav2 stack: navigation.launch.py includes nav2_bringup's navigation_launch.py -->
+  <exec_depend>navigation2</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

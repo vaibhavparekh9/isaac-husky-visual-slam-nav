@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--Expand with:
+    xacro husky_custom.urdf.xacro is_sim:=false gazebo_controllers:=none -o husky.urdf -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="husky">
+
+  <xacro:arg name="prefix" default="" />
+
+  <!-- Base Husky -->
+  <xacro:include filename="$(find husky_description)/urdf/husky_macro.urdf.xacro" />
+  <xacro:husky prefix="$(arg prefix)" />
+
+  <!-- RealSense D435 macro -->
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+
+  <!-- Mount height above base_link, and outboard offsets (meters). -->
+  <xacro:property name="cam_z"  value="0.15" />
+  <xacro:property name="cam_fx" value="0.43" />   <!-- front/rear |x| -->
+  <xacro:property name="cam_sy" value="0.28" />   <!-- left/right |y| -->
+
+  <xacro:sensor_d435 parent="base_link" name="front_camera" use_nominal_extrinsics="true">
+    <origin xyz="${cam_fx} 0 ${cam_z}" rpy="0 0 0" />
+  </xacro:sensor_d435>
+
+  <xacro:sensor_d435 parent="base_link" name="rear_camera" use_nominal_extrinsics="true">
+    <origin xyz="${-cam_fx} 0 ${cam_z}" rpy="0 0 ${pi}" />
+  </xacro:sensor_d435>
+
+  <xacro:sensor_d435 parent="base_link" name="left_camera" use_nominal_extrinsics="true">
+    <origin xyz="0 ${cam_sy} ${cam_z}" rpy="0 0 ${pi/2}" />
+  </xacro:sensor_d435>
+
+  <xacro:sensor_d435 parent="base_link" name="right_camera" use_nominal_extrinsics="true">
+    <origin xyz="0 ${-cam_sy} ${cam_z}" rpy="0 0 ${-pi/2}" />
+  </xacro:sensor_d435>
+
+</robot>
